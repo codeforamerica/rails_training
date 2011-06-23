@@ -1,5 +1,8 @@
 RailsTraining::Application.routes.draw do
   get "tweeters/index"
+  get "tweeters/new"
+  
+  resources :tweeters
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

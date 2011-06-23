@@ -3,4 +3,8 @@ class TweetersController < ApplicationController
     @tweeters = Tweeter.all
   end
 
+  def new 
+    @tweeter = Tweeter.new
+  end
+
 end
