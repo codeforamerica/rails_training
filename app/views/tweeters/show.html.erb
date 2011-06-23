@@ -2,7 +2,9 @@
 
 <p>
   <b>Screen name:</b>
+  <p><%= image_tag @tweeter.profile_image_url, :title => @tweeter.screen_name, :class => "profile" %></p>
   <%= @tweeter.screen_name %>
+
 </p>
 
 <table>
