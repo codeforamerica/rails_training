@@ -11,6 +11,7 @@ class Tweeter < ActiveRecord::Base
     tweets_array.each do |tweet|
       self.tweets.create(:message => tweet.text)
     end
+    self.delay(:run_at => 20.minutes.from_now).get_tweets
   end
 
   def add_profile_image

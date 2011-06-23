@@ -31,6 +31,10 @@ GEM
     addressable (2.2.6)
     arel (2.0.10)
     builder (2.1.2)
+    daemons (1.1.4)
+    delayed_job (2.1.4)
+      activesupport (~> 3.0)
+      daemons
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.6.1)
@@ -93,6 +97,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  delayed_job
   rails (= 3.0.9)
   rake (= 0.8.7)
   sqlite3

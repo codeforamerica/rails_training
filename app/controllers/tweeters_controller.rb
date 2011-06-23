@@ -2,6 +2,7 @@ class TweetersController < ApplicationController
   # GET /tweeters
   # GET /tweeters.xml
   def index
+    
     @tweeters = Tweeter.all
 
     respond_to do |format|
