@@ -1,25 +1,11 @@
+
 <h1>Listing tweets</h1>
 
-<table>
-  <tr>
-    <th>Tweeter</th>
-    <th>Message</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul>
 <% @tweets.each do |tweet| %>
-  <tr>
-    <td><%= tweet.tweeter_id %></td>
-    <td><%= tweet.message %></td>
-    <td><%= link_to 'Show', tweet %></td>
-    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-    <td><%= link_to 'Destroy', tweet, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <% if !tweet.tweeter.nil?%>
+    <li><%= tweet.message %><br><%= tweet.tweeter.screen_name %></li>
+    <% end %>
 <% end %>
-</table>
+</ul>
 
-<br />
-
-<%= link_to 'New Tweet', new_tweet_path %>
