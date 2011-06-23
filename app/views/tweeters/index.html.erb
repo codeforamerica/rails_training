@@ -13,6 +13,7 @@
 <% @tweeters.each do |tweeter| %>
   <tr>
     <td><%= tweeter.id%></td>
+    <td><%= image_tag tweeter.profile_image_url, :title => tweeter.screen_name, :class => "profile" %></td>    
     <td><%= tweeter.screen_name %></td>
     <td><%= time_ago_in_words(tweeter.created_at) %></td>    
     <td><%= link_to 'Show', tweeter %></td>
