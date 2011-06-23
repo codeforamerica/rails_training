@@ -10,10 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110623175646) do
+ActiveRecord::Schema.define(:version => 20110623181332) do
 
   create_table "tweeters", :force => true do |t|
     t.string   "screen_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.integer  "tweeter_id"
+    t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

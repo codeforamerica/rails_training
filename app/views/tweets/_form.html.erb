@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :tweeter_id %><br />
-    <%= f.text_field :tweeter_id %>
+    <%= select(:tweet, :tweeter_id, Tweeter.all.map { |x| [x.screen_name, x.id]}) %>
   </div>
   <div class="field">
     <%= f.label :message %><br />
