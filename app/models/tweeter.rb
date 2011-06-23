@@ -7,7 +7,13 @@ class Tweeter < ActiveRecord::Base
   validates_uniqueness_of :screen_name, :on => :create, :message => "must be unique"
   
   def get_tweets
-    tweets_array = Twitter.user_timeline(self.screen_name, :trim_user => true)
+    if self.tweets.blank?
+      tweets_array = Twitter.user_timeline(self.screen_name, :trim_user => true)
+    else
+      tweets_array = Twitter.user_timeline(self.screen_name, :trim_user => true, 
+      :since_id => self.tweets.last.tweet_id.to_i)
+    end
+    
     tweets_array.each do |tweet|
       self.tweets.create(:message => tweet.text, :tweet_id => tweet.id_str)
     end
