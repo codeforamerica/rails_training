@@ -41,7 +41,6 @@ class TweetersController < ApplicationController
   # POST /tweeters.xml
   def create
     @tweeter = Tweeter.new(params[:tweeter])
-    @tweeter.profile_image_url = Twitter.user(@tweeter.screen_name).profile_image_url
 
     respond_to do |format|
       if @tweeter.save
