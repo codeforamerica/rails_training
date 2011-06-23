@@ -4,7 +4,7 @@
 <ul>
 <% @tweets.each do |tweet| %>
     <% if !tweet.tweeter.nil?%>
-    <li><%= tweet.message %><br><%= tweet.tweeter.screen_name %></li>
+    <li><%= link_to(image_tag(tweet.tweeter.profile_image_url, :title => tweet.tweeter.screen_name),"http://www.twitter.com/#{tweet.tweeter.screen_name}")%><%= tweet.message %><br><%= link_to(tweet.tweeter.screen_name,"http://www.twitter.com/#{tweet.tweeter.screen_name}" ) %></li>
     <% end %>
 <% end %>
 </ul>
