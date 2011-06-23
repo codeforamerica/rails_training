@@ -1,1 +1,5 @@
-"Hello World!"
+<% form_for @tweeter do |f| -%>
+  <%= f.label :screen_name, "Screen Name" %><br>
+  <%= f.text_field :screen_name %>
+  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end -%>
