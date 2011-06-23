@@ -1,1 +1,3 @@
-<%= @tweeters.first.screen_name %>
+<% @tweeters.each do |tweeter| %>
+  <%= tweeter.screen_name %>
+<% end %>
