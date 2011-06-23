@@ -1,0 +1,23 @@
+<h1>Listing tweeters</h1>
+
+<table>
+  <tr>
+    <th>Screen name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tweeters.each do |tweeter| %>
+  <tr>
+    <td><%= tweeter.screen_name %></td>
+    <td><%= link_to 'Show', tweeter %></td>
+    <td><%= link_to 'Edit', edit_tweeter_path(tweeter) %></td>
+    <td><%= link_to 'Destroy', tweeter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tweeter', new_tweeter_path %>

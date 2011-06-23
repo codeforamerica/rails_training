@@ -1,0 +1,21 @@
+<%= form_for(@tweeter) do |f| %>
+  <% if @tweeter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tweeter.errors.count, "error") %> prohibited this tweeter from being saved:</h2>
+
+      <ul>
+      <% @tweeter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :screen_name %><br />
+    <%= f.text_field :screen_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

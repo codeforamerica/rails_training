@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Screen name:</b>
+  <%= @tweeter.screen_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_tweeter_path(@tweeter) %> |
+<%= link_to 'Back', tweeters_path %>
