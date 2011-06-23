@@ -9,7 +9,7 @@ class Tweeter < ActiveRecord::Base
   def get_tweets
     tweets_array = Twitter.user_timeline(self.screen_name, :trim_user => true)
     tweets_array.each do |tweet|
-      self.tweets.create(:message => tweet.text)
+      self.tweets.create(:message => tweet.text, :tweet_id => tweet.id_str)
     end
     self.delay(:run_at => 20.minutes.from_now).get_tweets
   end
