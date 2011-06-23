@@ -1,6 +1,7 @@
 class Tweeter < ActiveRecord::Base
   has_many :tweets
   before_create :add_profile_image
+  after_create :add_tweets
   
   validates_presence_of :screen_name, :on => :create, :message => "can't be blank"
   validates_uniqueness_of :screen_name, :on => :create, :message => "must be unique"
@@ -14,6 +15,10 @@ class Tweeter < ActiveRecord::Base
 
   def add_profile_image
     self.profile_image_url = Twitter.user(self.screen_name).profile_image_url
+  end
+  
+  def add_tweets
+    self.get_tweets
   end
   
 end
