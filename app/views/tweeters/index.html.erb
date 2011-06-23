@@ -6,11 +6,15 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>    
+    <th></th>
   </tr>
 
 <% @tweeters.each do |tweeter| %>
   <tr>
+    <td><%= tweeter.id%></td>
     <td><%= tweeter.screen_name %></td>
+    <td><%= time_ago_in_words(tweeter.created_at) %></td>    
     <td><%= link_to 'Show', tweeter %></td>
     <td><%= link_to 'Edit', edit_tweeter_path(tweeter) %></td>
     <td><%= link_to 'Destroy', tweeter, :confirm => 'Are you sure?', :method => :delete %></td>

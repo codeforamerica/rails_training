@@ -1,5 +1,7 @@
 RailsTraining::Application.routes.draw do
 
+  resources :tweets
+
   resources :tweeters
 
   # The priority is based upon order of creation:
