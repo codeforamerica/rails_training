@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
   def index
-    @tweets = Tweet.limit(10)
+    @tweets = Tweet.order("tweet_time DESC").limit(10)
 
     respond_to do |format|
       format.html # index.html.erb
