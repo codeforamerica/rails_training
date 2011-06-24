@@ -15,7 +15,7 @@ class Tweeter < ActiveRecord::Base
     end
     
     tweets_array.each do |tweet|
-      self.tweets.create(:message => tweet.text, :tweet_id => tweet.id_str)
+      self.tweets.create(:message => tweet.text, :tweet_id => tweet.id_str, :tweet_time => tweet.created_at)
     end
     self.delay(:run_at => 20.minutes.from_now).get_tweets
   end
