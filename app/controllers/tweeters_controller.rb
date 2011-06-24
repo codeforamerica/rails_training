@@ -1,4 +1,6 @@
 class TweetersController < ApplicationController
+  before_filter :authenticate_user!, :except => "index"
+  
   # GET /tweeters
   # GET /tweeters.xml
   def index
