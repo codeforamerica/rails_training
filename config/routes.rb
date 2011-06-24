@@ -1,5 +1,7 @@
 RailsTraining::Application.routes.draw do
 
+  get "confirmations/index"
+
   devise_for :users
 
   resources :tweets
