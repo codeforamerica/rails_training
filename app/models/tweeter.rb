@@ -2,9 +2,14 @@ class Tweeter < ActiveRecord::Base
   has_many :tweets
   before_create :add_profile_image
   after_create :add_tweets
+
   
   validates_presence_of :screen_name, :on => :create, :message => "can't be blank"
   validates_uniqueness_of :screen_name, :on => :create, :message => "must be unique"
+  
+  def tweeter_detail
+    TweeterDetail.where(:tweeter_id => self.id)
+  end
   
   def get_tweets
     if self.tweets.blank?

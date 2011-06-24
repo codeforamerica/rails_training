@@ -6,6 +6,8 @@ gem 'rake', '0.8.7'
 
 gem 'delayed_job'
 gem "devise", "~> 1.4.0"
+gem "mongo_mapper"
+gem 'bson_ext'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
